@@ -27,7 +27,8 @@ public class SecurityConfig {
                 .requestMatchers("/*").permitAll().
                 requestMatchers("/admin/**").hasAuthority("ADMIN").anyRequest().authenticated())
                 .formLogin(login-> login.loginPage("/logon").loginProcessingUrl("/logon")
-                        .usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/admin",true));
+                        .usernameParameter("username").passwordParameter("password").defaultSuccessUrl("/admin",true))
+                .logout(logout -> logout.logoutUrl("/admin-logout").logoutSuccessUrl("/logon"));
         return httpSecurity.build();
     }
 
