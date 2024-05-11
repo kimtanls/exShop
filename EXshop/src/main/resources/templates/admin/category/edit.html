@@ -36,11 +36,13 @@
 
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add category </h3>
+                        <h3 class="box-title">Edit category </h3>
                     </div>
 
 
-                    <form role="form" method="post" th:action="@{/admin/add-category}" th:object="${category}">
+                    <form role="form" method="post" th:action="@{/admin/edit-category}" th:object="${category}">
+                        <input type="text" class="form-control" id="" placeholder="category name" th:field="*{id}">
+
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Category Name</label>
@@ -65,7 +67,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>
